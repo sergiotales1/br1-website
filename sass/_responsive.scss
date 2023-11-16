@@ -1,0 +1,73 @@
+@import "normalize";
+
+// -------------------- NAV -------------------
+@mixin nav-responsive {
+  @media (max-width: 768px) {
+    .nav-btn {
+      display: block;
+    }
+
+    nav {
+      .top-nav {
+        display: none;
+      }
+      padding: 0.4rem 1rem;
+    }
+
+    .top-nav.inserted {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #d1d1d1;
+      font-size: 1.4rem;
+
+      .top-nav-item {
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  }
+}
+// ----------------- END NAV -----------------
+
+// ----------------- SECTION #1 -----------------
+@mixin section1-responsive {
+  @media (max-width: 768px) {
+    .section-1 {
+      grid-template-columns: 1fr;
+      gap: 1.3rem;
+      padding: 1rem 0;
+
+      div {
+        padding: 1rem;
+      }
+
+      &-text {
+        h1 {
+          font-size: 3.5rem;
+          text-align: center;
+          line-height: 60px;
+        }
+        span {
+          margin-top: -25px;
+          font-size: 2rem;
+        }
+      }
+
+      &-image {
+        max-width: 100%;
+        grid-row: 1;
+        padding: 0;
+        img {
+          width: 300px;
+        }
+
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+// ----------------- END SECTION #1 -----------------

@@ -1,0 +1,130 @@
+@import "normalize", "responsive";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: white;
+}
+
+.container {
+  width: 95vw;
+  margin: 0 auto;
+  background-color: #ebebeb;
+}
+
+// ------------------ NAV ------------------
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  border: 1px solid red;
+  padding: 0.4rem 2rem;
+  font-size: 1.4rem;
+
+  img {
+    height: 80px;
+    width: 150px;
+    object-fit: cover;
+    border: 1px solid;
+  }
+}
+
+.top-nav {
+  list-style-type: none;
+  display: flex;
+
+  &-item {
+    margin-right: 4rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &-link {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.top-nav.inserted {
+  display: none;
+}
+
+.nav-btn {
+  background-color: aqua;
+  outline: none;
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+
+.show-links {
+  height: auto;
+}
+
+@include nav-responsive;
+
+// ------------------ NAV ------------------
+
+// ------------------ SECTION #1 ------------------
+.section-1 {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid blue;
+
+  div {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &-text {
+    h1 {
+      margin-top: -10px;
+      max-width: 850px;
+      font-size: 5.5rem;
+      text-align: center;
+    }
+    span {
+      margin-top: -50px;
+      max-width: 850px;
+      font-size: 4rem;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  &-image {
+    img {
+      width: 100%;
+      max-height: 600px;
+      max-width: 600px;
+      object-fit: cover;
+    }
+    p {
+      font-size: 0.9rem;
+
+      a {
+        color: darkgray;
+      }
+    }
+  }
+}
+
+@include section1-responsive;
+// ------------------ END SECTION #1 ------------------
