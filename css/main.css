@@ -638,6 +638,18 @@ body {
   background-color: #ebebeb;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  width: 95vw;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 500ms;
+}
+header.sticking {
+  background-color: #ebebeb;
+}
+
 nav {
   display: flex;
   justify-content: space-between;

@@ -14,3 +14,17 @@ navBtn.addEventListener("click", () => {
     document.querySelector(".inserted").remove();
   }
 });
+
+// sticky nav
+// https://www.youtube.com/watch?v=V-CBdlfCPic
+const header = document.querySelector("header");
+// create an element and apply that before the real header
+const scrollWatcher = document.createElement("div");
+
+header.before(scrollWatcher);
+
+const navObserver = new IntersectionObserver((entries) => {
+  header.classList.toggle("sticking", !entries[0].isIntersecting);
+});
+
+navObserver.observe(scrollWatcher);
