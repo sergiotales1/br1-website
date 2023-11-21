@@ -716,6 +716,7 @@ nav img {
   align-items: center;
   justify-content: center;
   border: 1px solid blue;
+  height: 900px;
 }
 .section-1 div {
   padding: 2rem;
@@ -739,8 +740,8 @@ nav img {
 }
 .section-1-image img {
   width: 100%;
-  max-height: 600px;
-  max-width: 600px;
+  max-height: 700px;
+  max-width: 720px;
   object-fit: cover;
 }
 .section-1-image p {
@@ -755,6 +756,7 @@ nav img {
     grid-template-columns: 1fr;
     gap: 1.3rem;
     padding: 1rem 0;
+    height: 800px;
   }
   .section-1 div {
     padding: 1rem;
@@ -778,6 +780,100 @@ nav img {
   }
   .section-1-image p {
     font-size: 0.6rem;
+  }
+}
+.section-2 {
+  padding: 1rem 8rem;
+  border: 1px solid black;
+}
+.section-2-header {
+  width: 1300px;
+  margin: 200px auto 100px auto;
+}
+.section-2-header h1 {
+  font-size: 1.5rem;
+  color: green;
+}
+.section-2-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.section-2-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.section-2-content img {
+  object-fit: cover;
+  width: 100%;
+}
+.section-2-content img:nth-of-type(2) {
+  grid-column: 2;
+}
+.section-2-content article {
+  width: 80%;
+  align-self: center;
+  justify-self: center;
+}
+.section-2-content article p {
+  font-size: 1.3rem;
+  color: rgb(145, 142, 142);
+}
+.section-2-content article i {
+  color: green;
+  font-size: 2rem;
+}
+.section-2-content article:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+@media (max-width: 768px) {
+  .section-2 {
+    padding: 1rem 1rem;
+  }
+  .section-2-header {
+    width: 300px;
+    margin: 150px auto 100px auto;
+  }
+  .section-2-header h1 {
+    font-size: 1rem;
+    color: green;
+  }
+  .section-2-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .section-2-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .section-2-content img {
+    object-fit: cover;
+    width: 100%;
+  }
+  .section-2-content article {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .section-2-content article p {
+    text-align: start;
+    font-size: 1.3rem;
+    color: rgb(145, 142, 142);
+  }
+  .section-2-content article h1 {
+    padding: 1rem 0;
+    text-align: start;
+    font-size: 1.7rem;
+  }
+  .section-2-content article i {
+    color: green;
+    font-size: 2rem;
   }
 }
 
