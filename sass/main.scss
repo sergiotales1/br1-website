@@ -1,4 +1,4 @@
-@import "normalize", "responsive";
+@import "normalize", "responsive", "nav", "section1", "section2";
 
 *,
 *::after,
@@ -18,187 +18,64 @@ body {
   background-color: #ebebeb;
 }
 
-// ------------------ NAV ------------------
-header {
-  position: sticky;
-  top: 0;
-  width: 95vw;
-  margin: 0 auto;
-  background-color: rgba($color: #000000, $alpha: 0.2);
-  transition: background-color 500ms;
+// ------------------ START SECTION #3 ------------------
+.section-3 {
+  border: 1px solid aqua;
 
-  &.sticking {
-    background-color: #ebebeb;
-  }
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  border: 1px solid red;
-  padding: 0.4rem 2rem;
-  font-size: 1.4rem;
-
-  img {
-    height: 80px;
-    width: 150px;
-    object-fit: cover;
-    border: 1px solid;
-  }
-}
-
-.top-nav {
-  list-style-type: none;
-  display: flex;
-
-  &-item {
-    margin-right: 4rem;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
-  &-link {
-    text-decoration: none;
-    color: black;
-  }
-}
-
-.top-nav.inserted {
-  display: none;
-}
-
-.nav-btn {
-  background-color: aqua;
-  outline: none;
-  padding: 0.4rem;
-  border-radius: 0.6rem;
-  cursor: pointer;
-  border: none;
-  display: none;
-}
-
-.show-links {
-  height: auto;
-}
-
-@include nav-responsive;
-
-// ------------------ NAV ------------------
-
-// ------------------ SECTION #1 ------------------
-.section-1 {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid blue;
-  height: 900px;
-
-  div {
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  &-text {
-    h1 {
-      margin-top: -10px;
-      max-width: 850px;
-      font-size: 5.5rem;
-      text-align: center;
-    }
-    span {
-      margin-top: -50px;
-      max-width: 850px;
-      font-size: 4rem;
-      text-align: center;
-      font-weight: bold;
-    }
-  }
-
-  &-image {
-    img {
-      width: 100%;
-      max-height: 700px;
-      max-width: 720px;
-      object-fit: cover;
-    }
-    p {
-      font-size: 0.9rem;
-
-      a {
-        color: darkgray;
-      }
-    }
-  }
-}
-
-@include section1-responsive;
-// ------------------ END SECTION #1 ------------------
-
-// ------------------ SECTION #2 ------------------
-.section-2 {
-  padding: 1rem 8rem;
-  border: 1px solid black;
-
-  &-header {
+  .tabbed-content {
     width: 1300px;
-    margin: 200px auto 100px auto;
-    h1 {
-      font-size: 1.5rem;
-      color: green;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+    background-color: rgba($color: #fff, $alpha: 0.9);
+    margin: 100px auto;
+    border-radius: 15px;
   }
 
-  &-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
+  .buttons-section {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
 
-    img {
-      object-fit: cover;
-      width: 100%;
-
-      &:nth-of-type(2) {
-        grid-column: 2;
-      }
+    button {
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      width: 200px;
+      text-transform: uppercase;
+      margin: 0 40px;
+      cursor: pointer;
     }
 
-    article {
-      width: 80%;
-      align-self: center;
-      justify-self: center;
-
-      p {
-        font-size: 1.3rem;
-        color: rgb(145, 142, 142);
-      }
-
-      i {
-        color: green;
-        font-size: 2rem;
-      }
-
-      &:nth-of-type(2) {
-        grid-column: 1;
-        grid-row: 2;
-      }
+    .btn[data-tab="1"] {
+      background-color: aqua;
+    }
+    .btn[data-tab="2"] {
+      background-color: gold;
+    }
+    .btn[data-tab="3"] {
+      background-color: lightgreen;
     }
   }
 }
 
-@include section2-responsive;
+.content-section {
+  i {
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: green;
+    background-color: lightgreen;
+    border-radius: 50%;
+    width: 75px;
+  }
+}
 
+.content {
+  display: none;
+  padding: 5rem;
+}
+.show-tab {
+  display: grid;
+}
+
+@include section3-responsive;
 // ------------------ END SECTION #2 ------------------

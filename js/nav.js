@@ -24,7 +24,12 @@ const scrollWatcher = document.createElement("div");
 header.before(scrollWatcher);
 
 const navObserver = new IntersectionObserver((entries) => {
-  header.classList.toggle("sticking", !entries[0].isIntersecting);
+  const [entry] = entries;
+  if (entry.isIntersecting) header.classList.add("sticking");
+  else {
+    header.classList.remove("sticking");
+  }
+  // header.classList.toggle("sticking", !entries[0].isIntersecting);
 });
 
 navObserver.observe(scrollWatcher);

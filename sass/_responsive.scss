@@ -77,23 +77,22 @@
 
 @mixin section2-responsive {
   @media (max-width: 768px) {
+    .section-header {
+      width: 300px;
+      margin: 150px auto 100px auto;
+
+      h1 {
+        font-size: 1rem;
+        color: green;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
     .section-2 {
       padding: 1rem 1rem;
-
-      &-header {
-        width: 300px;
-        margin: 150px auto 100px auto;
-
-        h1 {
-          font-size: 1rem;
-          color: green;
-        }
-
-        h2 {
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
-        }
-      }
 
       &-content {
         display: flex;
@@ -133,3 +132,65 @@
   }
 }
 // ----------------- END SECTION #2 -----------------
+// ----------------- START SECTION #3 -----------------
+
+@mixin section3-responsive {
+  @media (max-width: 768px) {
+    .section-3 {
+      .section-header {
+        padding: 0.8rem;
+      }
+      .tabbed-content {
+        width: 270px;
+        background-color: rgba($color: #fff, $alpha: 0.9);
+        margin: 100px auto;
+        border-radius: 15px;
+      }
+
+      .buttons-section {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        display: flex;
+
+        button {
+          padding: 0.3rem 0;
+          border-radius: 10px;
+          border: none;
+          font-size: 0.7rem;
+          font-weight: bold;
+          width: 76px;
+          text-align: center;
+          text-transform: uppercase;
+          margin: 0 6px;
+          cursor: pointer;
+        }
+
+        .btn[data-tab="1"] {
+          background-color: aqua;
+        }
+        .btn[data-tab="2"] {
+          background-color: gold;
+        }
+        .btn[data-tab="3"] {
+          background-color: lightgreen;
+        }
+      }
+    }
+
+    .content-section {
+      i {
+        display: none;
+      }
+    }
+
+    .content {
+      display: none;
+      padding: 1rem 1rem;
+    }
+    .show-tab {
+      display: grid;
+    }
+  }
+}
+// ----------------- END SECTION #3 -----------------

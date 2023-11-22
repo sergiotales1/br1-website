@@ -620,34 +620,16 @@ template {
   display: none;
 }
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background-color: white;
-}
-
-.container {
-  width: 95vw;
-  margin: 0 auto;
-  background-color: #ebebeb;
-}
-
 header {
   position: sticky;
   top: 0;
   width: 95vw;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #ebebeb;
   transition: background-color 500ms;
 }
 header.sticking {
-  background-color: #ebebeb;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 nav {
@@ -794,21 +776,22 @@ nav img {
     font-size: 0.6rem;
   }
 }
-.section-2 {
-  padding: 1rem 8rem;
-  border: 1px solid black;
-}
-.section-2-header {
+.section-header {
   width: 1300px;
   margin: 200px auto 100px auto;
 }
-.section-2-header h1 {
+.section-header h1 {
   font-size: 1.5rem;
   color: green;
 }
-.section-2-header h2 {
+.section-header h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.section-2 {
+  padding: 1rem 8rem;
+  border: 1px solid black;
 }
 .section-2-content {
   display: grid;
@@ -820,6 +803,7 @@ nav img {
 .section-2-content img {
   object-fit: cover;
   width: 100%;
+  max-height: 550px;
 }
 .section-2-content img:nth-of-type(2) {
   grid-column: 2;
@@ -835,7 +819,11 @@ nav img {
 }
 .section-2-content article i {
   color: green;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: lightgreen;
+  border-radius: 50%;
 }
 .section-2-content article:nth-of-type(2) {
   grid-column: 1;
@@ -843,20 +831,20 @@ nav img {
 }
 
 @media (max-width: 768px) {
-  .section-2 {
-    padding: 1rem 1rem;
-  }
-  .section-2-header {
+  .section-header {
     width: 300px;
     margin: 150px auto 100px auto;
   }
-  .section-2-header h1 {
+  .section-header h1 {
     font-size: 1rem;
     color: green;
   }
-  .section-2-header h2 {
+  .section-header h2 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+  }
+  .section-2 {
+    padding: 1rem 1rem;
   }
   .section-2-content {
     display: flex;
@@ -886,6 +874,125 @@ nav img {
   .section-2-content article i {
     color: green;
     font-size: 2rem;
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: white;
+}
+
+.container {
+  width: 95vw;
+  margin: 0 auto;
+  background-color: #ebebeb;
+}
+
+.section-3 {
+  border: 1px solid aqua;
+}
+.section-3 .tabbed-content {
+  width: 1300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 100px auto;
+  border-radius: 15px;
+}
+.section-3 .buttons-section {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+.section-3 .buttons-section button {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 200px;
+  text-transform: uppercase;
+  margin: 0 40px;
+  cursor: pointer;
+}
+.section-3 .buttons-section .btn[data-tab="1"] {
+  background-color: aqua;
+}
+.section-3 .buttons-section .btn[data-tab="2"] {
+  background-color: gold;
+}
+.section-3 .buttons-section .btn[data-tab="3"] {
+  background-color: lightgreen;
+}
+
+.content-section i {
+  padding: 1rem;
+  font-size: 1.3rem;
+  color: green;
+  background-color: lightgreen;
+  border-radius: 50%;
+  width: 75px;
+}
+
+.content {
+  display: none;
+  padding: 5rem;
+}
+
+.show-tab {
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .section-3 .section-header {
+    padding: 0.8rem;
+  }
+  .section-3 .tabbed-content {
+    width: 270px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 100px auto;
+    border-radius: 15px;
+  }
+  .section-3 .buttons-section {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    display: flex;
+  }
+  .section-3 .buttons-section button {
+    padding: 0.3rem 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 76px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 6px;
+    cursor: pointer;
+  }
+  .section-3 .buttons-section .btn[data-tab="1"] {
+    background-color: aqua;
+  }
+  .section-3 .buttons-section .btn[data-tab="2"] {
+    background-color: gold;
+  }
+  .section-3 .buttons-section .btn[data-tab="3"] {
+    background-color: lightgreen;
+  }
+  .content-section i {
+    display: none;
+  }
+  .content {
+    display: none;
+    padding: 1rem 1rem;
+  }
+  .show-tab {
+    display: grid;
   }
 }
 
