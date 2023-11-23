@@ -13,6 +13,7 @@ body {
 }
 
 .container {
+  position: relative;
   width: 95vw;
   margin: 0 auto;
   background-color: #ebebeb;
@@ -44,6 +45,7 @@ body {
       text-transform: uppercase;
       margin: 0 40px;
       cursor: pointer;
+      transition: all 0.4s;
     }
 
     .btn[data-tab="1"] {
@@ -56,6 +58,10 @@ body {
       background-color: lightgreen;
     }
   }
+}
+
+.tab-active {
+  transform: translateY(-15%);
 }
 
 .content-section {

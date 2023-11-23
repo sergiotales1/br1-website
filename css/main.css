@@ -622,6 +622,7 @@ template {
 
 header {
   position: sticky;
+  z-index: 1000;
   top: 0;
   width: 95vw;
   margin: 0 auto;
@@ -629,7 +630,7 @@ header {
   transition: background-color 500ms;
 }
 header.sticking {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #bebebe;
 }
 
 nav {
@@ -690,6 +691,9 @@ nav img {
   }
   nav .top-nav {
     display: none;
+  }
+  header.sticking nav {
+    padding: 3.4rem 1rem 3.4rem 1rem;
   }
   .top-nav.inserted {
     display: flex;
@@ -799,6 +803,7 @@ nav img {
   align-items: center;
   justify-content: center;
   gap: 4rem;
+  margin-bottom: 200px;
 }
 .section-2-content img {
   object-fit: cover;
@@ -889,6 +894,7 @@ body {
 }
 
 .container {
+  position: relative;
   width: 95vw;
   margin: 0 auto;
   background-color: #ebebeb;
@@ -918,6 +924,7 @@ body {
   text-transform: uppercase;
   margin: 0 40px;
   cursor: pointer;
+  transition: all 0.4s;
 }
 .section-3 .buttons-section .btn[data-tab="1"] {
   background-color: aqua;
@@ -927,6 +934,10 @@ body {
 }
 .section-3 .buttons-section .btn[data-tab="3"] {
   background-color: lightgreen;
+}
+
+.tab-active {
+  transform: translateY(-15%);
 }
 
 .content-section i {

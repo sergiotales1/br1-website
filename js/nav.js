@@ -25,7 +25,7 @@ header.before(scrollWatcher);
 
 const navObserver = new IntersectionObserver((entries) => {
   const [entry] = entries;
-  if (entry.isIntersecting) header.classList.add("sticking");
+  if (!entry.isIntersecting) header.classList.add("sticking");
   else {
     header.classList.remove("sticking");
   }
