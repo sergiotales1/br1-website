@@ -84,4 +84,90 @@ body {
 }
 
 @include section3-responsive;
-// ------------------ END SECTION #2 ------------------
+// ------------------ END SECTION #3 ------------------
+
+// ------------------ START SLIDE #4 ------------------
+section.slider {
+  margin: 200px auto;
+  overflow: hidden;
+  width: 1200px;
+  position: relative;
+  height: 50rem;
+
+  button {
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+  }
+
+  .btn-prev {
+    position: absolute;
+    z-index: 10;
+    top: 20%;
+    left: 20px;
+  }
+
+  .btn-next {
+    position: absolute;
+    z-index: 10;
+    top: 20%;
+    right: 20px;
+  }
+
+  .slide {
+    background-color: white;
+    width: 100%;
+    display: block;
+    height: 50%;
+    position: relative;
+    transition: transform 800ms;
+    padding: 1rem 10rem;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 300px 80px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .slide-text {
+      grid-column: 1 / span 2;
+      h1 {
+        font-size: 2.3rem;
+      }
+      p {
+        color: darkgray;
+        font-size: 1.2rem;
+      }
+    }
+
+    .slide-avatar-name {
+      img {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .avatar-text > h1 {
+      font-size: 1.4rem;
+      padding: 0;
+      margin: 0;
+    }
+    &[data-slide="0"] {
+      transform: translateX(0%);
+    }
+
+    &[data-slide="1"] {
+      transform: translateX(100%);
+      top: -25.25rem;
+    }
+
+    &[data-slide="2"] {
+      transform: translateX(200%);
+      top: calc(2 * -25.25rem);
+    }
+  }
+}
+// ------------------ END SLIDE #4 ------------------

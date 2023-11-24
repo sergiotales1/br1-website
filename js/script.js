@@ -17,3 +17,37 @@ btnSection.addEventListener("click", function (e) {
     }
   });
 });
+
+// slide
+
+const slides = document.querySelectorAll(".slide");
+const btnNext = document.querySelector(".btn-next");
+const btnPrev = document.querySelector(".btn-prev");
+
+let curSlide = 0;
+const maxSlide = slides.length;
+// init
+
+btnNext.addEventListener("click", () => {
+  if (curSlide === maxSlide - 1) {
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
+  slides.forEach((el, i) => {
+    el.style.transform = `translateX(${(i - curSlide) * 100}%)`;
+    console.log(el.style.transform, i, curSlide);
+  });
+});
+
+btnPrev.addEventListener("click", () => {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1;
+  } else {
+    curSlide--;
+  }
+  slides.forEach((el, i) => {
+    el.style.transform = `translateX(${(i - curSlide) * 100}%)`;
+    console.log(el.style.transform, i, curSlide);
+  });
+});
