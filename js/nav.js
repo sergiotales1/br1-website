@@ -10,6 +10,7 @@ navBtn.addEventListener("click", () => {
       document.querySelector(".top-nav").innerHTML
     }</ul>`;
     document.querySelector("nav").insertAdjacentHTML("afterend", html);
+    document.querySelector(".inserted").addEventListener("click", navBubbling);
   } else {
     document.querySelector(".inserted").remove();
   }
@@ -33,3 +34,15 @@ const navObserver = new IntersectionObserver((entries) => {
 });
 
 navObserver.observe(scrollWatcher);
+
+navList.addEventListener("click", navBubbling);
+
+function navBubbling(e) {
+  e.preventDefault();
+  const el = e.target.closest(".top-nav-link");
+  if (el) {
+    document.querySelector(`.section-${el.dataset.link}`).scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}

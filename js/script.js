@@ -18,6 +18,7 @@ btnSection.addEventListener("click", function (e) {
   });
 });
 
+/*
 // slide
 
 const slides = document.querySelectorAll(".slide");
@@ -51,3 +52,4 @@ btnPrev.addEventListener("click", () => {
     console.log(el.style.transform, i, curSlide);
   });
 });
+*/
