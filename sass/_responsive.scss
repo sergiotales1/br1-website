@@ -197,3 +197,15 @@
   }
 }
 // ----------------- END SECTION #3 -----------------
+
+// ----------------- FOOTER -----------------
+@mixin footer-responsive {
+  @media (max-width: 768px) {
+    footer {
+      height: 80px;
+      font-size: 0.8rem;
+      padding: 0 1rem;
+    }
+  }
+}
+// ----------------- END FOOTER -----------------
