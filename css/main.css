@@ -970,7 +970,7 @@ body {
     padding: 0.8rem;
   }
   .section-3 .tabbed-content {
-    width: 270px;
+    width: 305px;
     background-color: rgba(255, 255, 255, 0.9);
     margin: 100px auto;
     border-radius: 15px;
@@ -982,12 +982,12 @@ body {
     display: flex;
   }
   .section-3 .buttons-section button {
-    padding: 0.3rem 0;
+    padding: 0.4rem 0;
     border-radius: 10px;
     border: none;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: bold;
-    width: 76px;
+    width: 90px;
     text-align: center;
     text-transform: uppercase;
     margin: 0 6px;
